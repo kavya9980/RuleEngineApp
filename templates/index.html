@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Rule Engine</h1>
+        
+        <h2>Create Rule</h2>
+        <form id="createRuleForm">
+            <input type="text" id="ruleName" placeholder="Rule Name" required>
+            <input type="text" id="condition" placeholder="Condition" required>
+            <input type="text" id="action" placeholder="Action" required>
+            <button type="submit">Create Rule</button>
+        </form>
 
+        <h2>Evaluate Rule</h2>
+        <form id="evaluateRuleForm">
+            <input type="text" id="evalRuleName" placeholder="Rule Name" required>
+            <input type="text" id="evalData" placeholder="Data (JSON format)" required>
+            <button type="submit">Evaluate Rule</button>
+        </form>
+
+        <h2>Existing Rules</h2>
+        <ul id="rulesList"></ul>
+
+        <div class="results" id="results"></div>
+
+        <h2>User Feedback</h2>
+        <form id="feedbackForm">
+            <input type="text" id="feedback" placeholder="Your feedback" required>
+            <button type="submit">Submit Feedback</button>
+        </form>
+
+        <h2>Logging</h2>
+        <div id="log"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
